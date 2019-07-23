@@ -1,0 +1,1 @@
+This folder contains all the static resources of the project.

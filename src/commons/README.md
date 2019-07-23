@@ -1,0 +1,1 @@
+This folder contains reusable components (commons components) by the Project.

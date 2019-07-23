@@ -1,0 +1,1 @@
+This folder calls configuration API and mock data

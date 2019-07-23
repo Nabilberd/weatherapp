@@ -1,0 +1,1 @@
+Actions are payloads of information that send data from the features to the store. 
