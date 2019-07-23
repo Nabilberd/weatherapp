@@ -1,9 +1,11 @@
 import React from 'react';
+import {Provider} from 'react-redux';
+import store from './store';
 
 export default () => {
   return (
-    <div >
-      hello world
-    </div>
+    <Provider store={store}>
+      <div>hello</div>
+    </Provider>
   );
 }
