@@ -5,6 +5,8 @@ import Button from '../commons/ButtonStep';
 import Spinner from '../commons/Spinner';
 import RadioGroup from '../commons/RadioGroup';
 import RadioItem from '../commons/RadioItem';
+import GridGroup from '../commons/GridGroup';
+import GridItem from '../commons/GridItem';
 
 storiesOf('Story Component', module)
  
@@ -39,4 +41,15 @@ storiesOf('Story Component', module)
       <RadioItem value="C" label="Celcius" />
       <RadioItem value="F" label="Fahrenheit" />
     </RadioGroup>
+  ))
+
+  .add('Grid Group', () => (
+    <GridGroup>
+      {[0, 1, 2].map(value => (
+        <GridItem kye={value} item>
+           A+{value} 
+        </GridItem>
+      ))}
+
+    </GridGroup>
   ))
