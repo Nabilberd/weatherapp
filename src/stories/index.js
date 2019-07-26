@@ -7,6 +7,7 @@ import RadioGroup from '../commons/RadioGroup';
 import RadioItem from '../commons/RadioItem';
 import GridGroup from '../commons/GridGroup';
 import GridItem from '../commons/GridItem';
+import Card from '../commons/Card';
 
 storiesOf('Story Component', module)
  
@@ -52,4 +53,8 @@ storiesOf('Story Component', module)
       ))}
 
     </GridGroup>
+  ))
+
+  .add('Card ', () => (
+    <Card raised > TEST </Card>
   ))
