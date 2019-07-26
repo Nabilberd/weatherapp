@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Text from '../commons/Text';
 import Button from '../commons/ButtonStep';
+import Spinner from '../commons/Spinner';
 
 storiesOf('Story Component', module)
  
@@ -25,4 +26,8 @@ storiesOf('Story Component', module)
         
       <Button variant="outlinedsize" size="small" />
     </>
+  ))
+
+  .add('Spinner ', () => (
+    <Spinner> Loading </Spinner>
   ))
