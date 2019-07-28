@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feature Daily Weather Display two arrow button  1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; margin-bottom: 7vh; width: 100%; height: 10vh;"
+  >
+    <div
+      style="width: 20%; display: inline-block; height: 100%; text-align: -webkit-center;"
+    />
+    <div
+      style="background: pink; display: inline-block; width: 60%; height: 100%;"
+    >
+      <h4
+        class="MuiTypography-root MuiTypography-h4 MuiTypography-colorTextPrimary MuiTypography-gutterBottom MuiTypography-alignCenter MuiTypography-displayInline"
+        style="font-family: sans-serif; font-size: 24px; color: black;"
+      >
+        Daily weather
+      </h4>
+       &gt;
+    </div>
+    <div
+      style="display: inline-block; width: 20%; height: 100%; text-align: -webkit-center;"
+    >
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-sizeSmall"
+        style="display: flex; border-radius: 50%; border: 2px solid #0012ff;"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-colorPrimary"
+            focusable="false"
+            role="presentation"
+            style="font-size: 4.1875rem;"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 8V6.41c0-.89 1.08-1.34 1.71-.71l5.59 5.59c.39.39.39 1.02 0 1.41l-5.59 5.59c-.63.63-1.71.19-1.71-.7V16H5c-.55 0-1-.45-1-1V9c0-.55.45-1 1-1h7z"
+            />
+          </svg>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
