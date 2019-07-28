@@ -7,8 +7,9 @@ const styles = {
         fontSize: 20,
     },
     cardStyle : {
-        height: 240,
-        width: 250,
+        backgroundColor : 'white',
+        height: 270,
+        width: 260,
         borderRadius: 17,
         boxShadow : '0px 5px 5px -3px #4906e24a, 0px 8px 10px 1px #7e9fed5c, 0px 3px 14px 2px #8fbfe880'
     },
@@ -41,6 +42,11 @@ const styles = {
     },
     nextIconBloc : {
         fontSize: '4.1875rem'
+    },
+    cardAction : {
+        color: 'blue',
+        width: '100%',
+        height: '100%'
     }
 }
 
