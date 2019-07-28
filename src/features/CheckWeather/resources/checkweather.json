@@ -1,0 +1,13 @@
+  {
+    "degreeItems": [
+      {
+        "value": "C",
+        "label": "Celcius"
+      },
+      {
+        "label": "Fahrenheit",
+        "value": "F"
+      }
+    ],
+    "reducer": "weather"
+  }

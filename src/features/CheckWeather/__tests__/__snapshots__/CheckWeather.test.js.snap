@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feature Check Weather Display radio group with two option Celcius and Fahrenheit 1`] = `
+<DocumentFragment>
+   
+  <div
+    style="width: 100%; height: 7vh;"
+  >
+    <div
+      class="MuiFormGroup-root MuiFormGroup-row"
+      role="radiogroup"
+      style="justify-content: space-evenly;"
+    >
+      <label
+        class="MuiFormControlLabel-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-14 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+          style="color: rgb(0, 18, 255); font-size: 20px;"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <div
+              class="PrivateRadioButtonIcon-root-30"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                />
+              </svg>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-31"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                />
+              </svg>
+            </div>
+            <input
+              class="PrivateSwitchBase-input-17"
+              name="checkWeather"
+              type="radio"
+              value="C"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3 MuiTypography-colorTextPrimary MuiTypography-gutterBottom MuiTypography-alignCenter MuiTypography-displayInline"
+            style="font-family: sans-serif; font-size: 24px;"
+          >
+            Celcius
+          </h3>
+        </span>
+      </label>
+      <label
+        class="MuiFormControlLabel-root"
+      >
+        <span
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-14 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-15 Mui-checked MuiIconButton-colorSecondary"
+          style="color: rgb(0, 18, 255); font-size: 20px;"
+        >
+          <span
+            class="MuiIconButton-label"
+          >
+            <div
+              class="PrivateRadioButtonIcon-root-30 PrivateRadioButtonIcon-checked-32"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                />
+              </svg>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-31"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                />
+              </svg>
+            </div>
+            <input
+              checked=""
+              class="PrivateSwitchBase-input-17"
+              name="checkWeather"
+              type="radio"
+              value="F"
+            />
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </span>
+        <span
+          class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+        >
+          <h3
+            class="MuiTypography-root MuiTypography-h3 MuiTypography-colorTextPrimary MuiTypography-gutterBottom MuiTypography-alignCenter MuiTypography-displayInline"
+            style="font-family: sans-serif; font-size: 24px;"
+          >
+            Fahrenheit
+          </h3>
+        </span>
+      </label>
+    </div>
+  </div>
+   
+</DocumentFragment>
+`;
