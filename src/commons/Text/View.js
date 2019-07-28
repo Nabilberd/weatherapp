@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 
 import styles from '../style';
 
-export default ({align, color, display, gutterBottom, variant, children, style}) => (
+export default ({align="center", color="textPrimary", display="inline", gutterBottom=true, variant="h4", children, style}) => (
     <Typography 
         align={align}
         color={color}
