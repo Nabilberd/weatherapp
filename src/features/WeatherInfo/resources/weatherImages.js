@@ -17,7 +17,7 @@ const weatherImages = [
     },
     {
         "name": "sky",
-        "path": require("../../../assets/img/sun.png")
+        "path": require("../../../assets/img/sky.png")
     }
 ]
 

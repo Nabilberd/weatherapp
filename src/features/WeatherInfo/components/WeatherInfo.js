@@ -12,7 +12,7 @@ import { styles } from '../styles/default'
 
 import { getImageWeather, getTheDay, getTheMonth } from '../../../utils/commons'
 
-export default ({ weatherData, degree }) => {
+export default ({ weatherData, degree, cityName }) => {
 
     const [startIndex, setStartIndex] = React.useState(0);
 
@@ -23,6 +23,9 @@ export default ({ weatherData, degree }) => {
                 onClickRight={() => setStartIndex(startIndex + 1)}
                 displayPrevious={startIndex > 0}
                 displayNext={weatherData.length > startIndex + 3}
+                currentWeather={weatherData[0]}
+                cityName={cityName}
+                degree={degree}
             />
             <div style={styles.cards}>
                 <GridGroup spacing={6} style={styles.gridBloc}>
@@ -38,7 +41,7 @@ export default ({ weatherData, degree }) => {
                                     </Text>
                                 </div>
                                 <div style={styles.imageBloc}>
-                                    <img height={80}
+                                    <img height={80} alt=""
                                         src={getImageWeather(weatherItem.description, weatherImages).path}
                                     >
                                     </img>

@@ -17,16 +17,48 @@ export const styles = {
         textAlign: '-webkit-center'
     },
     middleArrow: {
+        textAlign: 'center',
+        verticalAlign: 'middle',
+        lineHeight: '90px',
         background: 'pink',
-        display: 'inline-block',
+        display: 'inline-flex',
         width: '60%',
-        height: '100%'
+        height: '100%',
+        borderRadius: '20px'
     },
     arrowRight: {
-        //background: 'black',
         display: 'inline-block',
         width: '20%',
         height: '100%',
         textAlign: '-webkit-center'
+    },
+    cityBloc: {
+        width: '30%',
+        marginTop: '16px',
+        flexFlow: 'column',
+        display: 'flex'
+    },
+    cityFontStyle: {
+        color: 'black',
+        fontSize: '24px',
+        fontWeight: 550
+    },
+    weatherInfoBloc: {
+        color: 'black',
+        fontSize: '20px'
+    },
+    imageBloc: {
+        width: '40%'
+    },
+    currentWeatherBloc: {
+        marginBottom: '4px'
+    },
+    currentWeatherStyle: {
+        color: 'black',
+        fontWeight: 550
+    },
+    descriptionBloc: {
+        color: 'black',
+        textTransform: 'capitalize'
     }
 }

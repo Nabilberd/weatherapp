@@ -19,10 +19,10 @@ export const styles = {
     colorInfo : {
         color: "black"
     },
-    colorMinTemp: {
+    colorMaxTemp: {
         color : '#EE4266'
     },
-    colorMaxTemp: {
+    colorMinTemp: {
         color: '#75b4e3'
     },
     gridBloc : {
