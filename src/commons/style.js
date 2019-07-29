@@ -47,6 +47,23 @@ const styles = {
         color: 'blue',
         width: '100%',
         height: '100%'
+    },
+    chartBloc: {
+        height: '340px', weight: '100px'
+    },
+    colorMinTemp: "#1DA6C6",
+    colorMaxTemp: "#EE4266",
+    fontTitle: {
+        size: 16,
+        weight: 600
+    },
+    fontLegend: {
+        size: 14,
+        weight: 600
+    },
+    fontLabel: {
+        size: 14,
+        weight: 600
     }
 }
 

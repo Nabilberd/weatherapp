@@ -10,7 +10,7 @@ import GridItem from '../commons/GridItem';
 import Card from '../commons/Card';
 
 storiesOf('Story Component', module)
- 
+  
   .add('Text ', () => (
     <>
       <Text
@@ -57,4 +57,15 @@ storiesOf('Story Component', module)
 
   .add('Card ', () => (
     <Card raised > TEST </Card>
+  ))
+
+  .add('Chart bar exemple ', () => (
+    <Chart id={'chart'} dataSource={dataSource}>
+        <Series
+          valueField={'oranges'}
+          argumentField={'day'}
+          name={'My oranges'}
+          type={'bar'}
+          color={'#ffaa66'} />
+    </Chart>
   ))
