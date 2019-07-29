@@ -28,7 +28,7 @@ export default () => {
 
     switch (status) {
         case 'error':
-            return <Spinner />;
+            return <Error handleClick={doGetWeatherInfo} />;
         case 'loading':
             return <Spinner />;
         case 'success':
@@ -40,7 +40,7 @@ export default () => {
                 </>
             )
         default:
-            return null;
+            return <Error handleClick={doGetWeatherInfo} />;
     }
 
 }

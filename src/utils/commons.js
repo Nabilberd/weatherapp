@@ -1,6 +1,18 @@
 
-import React from 'react';
+import { confirmAlert } from "react-confirm-alert";
 
+export const degreeItems = [
+    {
+        "key": "C",
+        "value": "metric",
+        "label": "Celcius"
+    },
+    {
+        "key": "F",
+        "value": "imperial",
+        "label": "Fahrenheit"
+    }
+]
 export const weatherMapper = (data) => {
     const result = [];
     const currentData = data[0];
@@ -16,12 +28,12 @@ export const weatherMapper = (data) => {
                 temp_min: parseInt(element.main.temp_min),
                 temp_max: parseInt(element.main.temp_max),
                 description: element.weather[0].description,
-                temp: element.main.temp
+                temp: parseInt(element.main.temp)
             };
         }
         if (time === currentDate) {
             result[key].description = element.weather[0].description;
-            result[key].temp = element.main.temp;
+            result[key].temp = parseInt(element.main.temp);
         }
     });
     return Object.keys(result).map(resultItem => ({ ...result[resultItem], date: new Date(resultItem) }));
@@ -44,15 +56,15 @@ export const getTheMonth = (date) => {
 }
 
 export const getUnitName = (unit) => {
-    const degreeItems = [
-        {
-            "value": "C",
-            "label": "Celcius"
-        },
-        {
-            "label": "Fahrenheit",
-            "value": "F"
-        }
-    ]
-    return degreeItems.find((degreeItem) => degreeItem.value === unit).label;
+    return degreeItems.find((degreeItem) => degreeItem.key === unit).label;
+}
+
+export const showPopup = (title, message, buttons) => {
+    confirmAlert({
+        title: title,
+        message: message,
+        buttons: buttons,
+        closeOnEscape: false,
+        closeOnClickOutside: false
+    })
 }

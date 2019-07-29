@@ -1,7 +1,7 @@
 {
   "name": "weatherapp",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://weathercityinfo.herokuapp.com/",
   "private": true,
   "proxy": "http://api.openweathermap.org/data/2.5/",
   "dependencies": {
@@ -12,7 +12,9 @@
     "devextreme-react": "^19.1.4",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
+    "react-confirm-alert": "^2.4.1",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
