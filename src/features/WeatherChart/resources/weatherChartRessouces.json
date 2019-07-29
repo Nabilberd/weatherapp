@@ -1,0 +1,18 @@
+{
+  "globalTitle": "Daily Temperature in 5 day by ",
+  "titleAxeY": "Temperature by ",
+  "argumentFields": {
+    "argX": "date",
+    "argMinTemp": {
+      "name": "Minimum Temperature",
+      "value": "temp_min"
+    },
+    "argMaxTemp": {
+      "name": "Maximum Temperature",
+      "value": "temp_max"
+    }
+  },
+  "verticalAlignment": "bottom",
+  "horizontalAlignment": "center",
+  "formatToolip": "currency"
+}
