@@ -2,7 +2,7 @@ import { INPUT_CHANGE } from '../actions/actionTypes'
 import { weatherMapper } from '../utils/commons';
 
 const initialState = {
-    city: "Münche",
+    city: "München",
     degree: "F"
 };
 
