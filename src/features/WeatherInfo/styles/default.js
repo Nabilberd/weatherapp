@@ -5,7 +5,7 @@ export const styles = {
     cards: {
         margin: '0 auto',
         height: '37vh',
-        textAlign: '-webkit-center'
+        textAlign: '-webkit-center',
     },
     dateBloc : {
         marginBottom: '20px' 
@@ -24,5 +24,8 @@ export const styles = {
     },
     colorMaxTemp: {
         color: '#75b4e3'
+    },
+    gridBloc : {
+        width: '100%'
     }
 }

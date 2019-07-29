@@ -25,7 +25,7 @@ export default ({ weatherData, degree }) => {
                 displayNext={weatherData.length > startIndex + 3}
             />
             <div style={styles.cards}>
-                <GridGroup spacing={6}>
+                <GridGroup spacing={6} style={styles.gridBloc}>
                     {weatherData.slice(startIndex, startIndex + 3).map((weatherItem, index) =>
                         <GridItem key={index} item>
                             <Card raised >
