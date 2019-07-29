@@ -42,3 +42,17 @@ export const getTheMonth = (date) => {
     const myMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return myMonths[date.getMonth()]
 }
+
+export const getUnitName = (unit) => {
+    const degreeItems = [
+        {
+            "value": "C",
+            "label": "Celcius"
+        },
+        {
+            "label": "Fahrenheit",
+            "value": "F"
+        }
+    ]
+    return degreeItems.find((degreeItem) => degreeItem.value === unit).label;
+}
