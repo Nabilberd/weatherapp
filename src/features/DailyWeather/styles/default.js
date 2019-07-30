@@ -48,6 +48,7 @@ export const styles = {
         fontSize: '20px'
     },
     imageBloc: {
+        marginTop: '5px',
         width: '40%'
     },
     currentWeatherBloc: {

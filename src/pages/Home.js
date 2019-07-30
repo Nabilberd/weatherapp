@@ -15,32 +15,30 @@ export default () => {
     const dispatch = useDispatch();
     const status = weather.status;
     const defaultCity = weather.city;
+    const degree = weather.degree;
+    const weatherData = weather.data; 
 
     const getUnits = (currentUnit) => degreeItems.find(unit => unit.key === currentUnit)
 
     React.useEffect(() => {
-        doGetWeatherInfo();
-    }, [dispatch, weather.degree, defaultCity]);
-
-    const doGetWeatherInfo = () => {
-        dispatch(getWeatherInfo(defaultCity, getUnits(weather.degree).value))
-    }
+        dispatch(getWeatherInfo(defaultCity, getUnits(degree).value))
+    }, [dispatch, defaultCity, degree]);
 
     switch (status) {
         case 'error':
-            return <Error handleClick={doGetWeatherInfo} />;
+            return <Spinner />;
         case 'loading':
             return <Spinner />;
         case 'success':
             return (
                 <>
                     <CheckWeather />
-                    <WeatherInfo weatherData={weather.data} degree={weather.degree} cityName={defaultCity} />
-                    <WeatherChart degree={weather.degree} weatherData={weather.data} />
+                    <WeatherInfo weatherData={weatherData} degree={degree} cityName={defaultCity} />
+                    <WeatherChart degree={degree} weatherData={weatherData} />
                 </>
             )
         default:
-            return <Error handleClick={doGetWeatherInfo} />;
+            return null;
     }
 
 }
