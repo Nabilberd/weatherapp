@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 
 import Error from './Error';
-import { degreeItems, showPopup } from '../utils/commons'
+import { degreeItems } from '../utils/commons';
 import { getWeatherInfo } from '../actions/actionCreators';
 import Spinner from '../commons/Spinner';
 import CheckWeather from '../features/CheckWeather/components/CheckWeather';
@@ -16,7 +16,7 @@ export default () => {
     const status = weather.status;
     const defaultCity = weather.city;
     const degree = weather.degree;
-    const weatherData = weather.data; 
+    const weatherData = weather.data;
 
     const getUnits = (currentUnit) => degreeItems.find(unit => unit.key === currentUnit)
 
@@ -26,7 +26,8 @@ export default () => {
 
     switch (status) {
         case 'error':
-            return <Spinner />;
+            const popupActions = [{ label: 'Retry', onClick: () => dispatch(getWeatherInfo(defaultCity, getUnits(degree).value)) }];
+            return <Error actions={popupActions} />;
         case 'loading':
             return <Spinner />;
         case 'success':
