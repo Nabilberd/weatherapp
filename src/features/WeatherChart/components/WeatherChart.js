@@ -19,7 +19,7 @@ export default ({ weatherData, degree }) => {
     }
 
     return (
-
+        
         <BarChart
             globalTitle={globalTitle + unitName}
             titleAxeY={titleAxeY + unitName}

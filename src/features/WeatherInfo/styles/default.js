@@ -4,14 +4,13 @@
 export const styles = {
     cards: {
         margin: '0 auto',
-        height: '37vh',
         textAlign: '-webkit-center',
     },
     dateBloc : {
-        marginBottom: '20px' 
+        marginBottom: '6px' 
     },
     imageBloc : {
-        marginBottom: '20px'
+        marginBottom: '6px'
     },
     minTempBloc : {
         marginBottom: '3px'

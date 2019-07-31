@@ -3,14 +3,10 @@ import React from 'react';
 import GridGroup from '../../../commons/GridGroup';
 import GridItem from '../../../commons/GridItem';
 import Card from '../../../commons/Card';
-import Text from '../../../commons/Text';
-
 import { DailyWeather } from '../../DailyWeather';
-
-import weatherImages from '../resources/weatherImages'
 import { styles } from '../styles/default'
+import CardContent from './CardContent';
 
-import { getImageWeather, getTheDay, getTheMonth } from '../../../utils/commons'
 
 export default ({ weatherData, degree, cityName }) => {
 
@@ -31,37 +27,8 @@ export default ({ weatherData, degree, cityName }) => {
                 <GridGroup spacing={6} style={styles.gridBloc}>
                     {weatherData.slice(startIndex, startIndex + 3).map((weatherItem, index) =>
                         <GridItem key={index} item>
-                            <Card raised >
-                                <div style={styles.dateBloc}>
-                                    <Text
-                                        style={styles.colorInfo}
-                                    >
-                                        {getTheDay(weatherItem.date)} <br />
-                                        {weatherItem.date.getDate() + " " + getTheMonth(weatherItem.date)}
-                                    </Text>
-                                </div>
-                                <div style={styles.imageBloc}>
-                                    <img height={80} alt=""
-                                        src={getImageWeather(weatherItem.description, weatherImages).path}
-                                    >
-                                    </img>
-                                </div>
-                                <>
-                                    <div style={styles.minTempBloc}>
-                                        <Text
-                                            style={styles.colorMinTemp}
-                                        >
-                                            {weatherItem.temp_min + "°" + degree}
-                                        </Text>
-                                    </div>
-                                    <>
-                                        <Text
-                                            style={styles.colorMaxTemp}
-                                        >
-                                            {weatherItem.temp_max + "°" + degree}
-                                        </Text>
-                                    </>
-                                </>
+                            <Card raised>
+                                <CardContent {...weatherItem} degree={degree} />
                             </Card>
                         </GridItem>
                     )}

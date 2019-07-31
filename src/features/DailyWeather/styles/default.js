@@ -4,10 +4,8 @@
 export const styles = {
     navigation: {
         display: 'flex',
-        marginBottom: '7vh',
-        background: 'res',
+        marginBottom: '2vh',
         width: '100%',
-        height: '10vh'
     },
     arrowLeft: {
         //background: 'red',
@@ -19,7 +17,7 @@ export const styles = {
     middleArrow: {
         textAlign: 'center',
         verticalAlign: 'middle',
-        lineHeight: '90px',
+        lineHeight: '20px',
         background: 'pink',
         display: 'inline-flex',
         width: '60%',
@@ -33,26 +31,25 @@ export const styles = {
         textAlign: '-webkit-center'
     },
     cityBloc: {
+        marginLeft: '6px',
         width: '30%',
-        marginTop: '16px',
+        marginTop: '9px',
         flexFlow: 'column',
         display: 'flex'
     },
     cityFontStyle: {
         color: 'black',
-        fontSize: '24px',
+        fontSize: '16px',
         fontWeight: 550
     },
     weatherInfoBloc: {
         color: 'black',
-        fontSize: '20px'
+        fontSize: '16px'
     },
     imageBloc: {
+        marginLeft: '23px',
         marginTop: '5px',
         width: '40%'
-    },
-    currentWeatherBloc: {
-        marginBottom: '4px'
     },
     currentWeatherStyle: {
         color: 'black',

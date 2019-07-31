@@ -1,5 +1,8 @@
 @import '~react-confirm-alert/src/react-confirm-alert.css'; 
 
+body {
+  margin : 0
+}
 body.react-confirm-alert-body-element {
     overflow: hidden;
   }
@@ -35,7 +38,7 @@ body.react-confirm-alert-body-element {
   
   .react-confirm-alert-body {
     font-family: Arial, Helvetica, sans-serif;
-    width: 400px;
+    width: 300px;
     padding: 30px;
     text-align: left;
     background: #fff;
@@ -53,12 +56,12 @@ body.react-confirm-alert-body-element {
   
   .react-confirm-alert-body > h1 {
     margin-top: 0;
-    font-size: 22px;
+    font-size: 16px;
   }
   
   .react-confirm-alert-body > h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 12px;
   }
   
   .react-confirm-alert-button-group {
@@ -81,6 +84,6 @@ body.react-confirm-alert-body-element {
     color: #eee;
     margin-right: 10px;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 10px;
     cursor: pointer;
   }

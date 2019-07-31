@@ -1,19 +1,24 @@
 import { INPUT_CHANGE } from '../actions/actionTypes'
-import { weatherMapper } from '../utils/commons';
+import { weatherMapper, convertData } from '../utils/commons';
 
 const initialState = {
     city: "München",
-    degree: "F"
+    degree: "F",
+    status: "loading"
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
         case INPUT_CHANGE: {
-            if (action.reducer === 'weather')
+            if (action.reducer === 'weather') {
+                const data = convertData(state.data, action.payload);
                 return {
                     ...state,
+                    data,
                     [action.storekey]: action.payload
                 };
+            }
+
             break;
         }
         case 'LOAD_WEATHER':

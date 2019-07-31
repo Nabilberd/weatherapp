@@ -21,22 +21,37 @@ export const weatherMapper = (data) => {
         const key = element.dt_txt.substring(0, 10);
         const time = element.dt_txt.substring(11);
         if (result[key]) {
-            result[key].temp_min = Math.min(result[key].temp_min, parseInt(element.main.temp_min));
-            result[key].temp_max = Math.max(result[key].temp_max, parseInt(element.main.temp_max));
+            result[key].temp_min = Math.min(result[key].temp_min, element.main.temp_min);
+            result[key].temp_max = Math.max(result[key].temp_max, element.main.temp_max);
         } else {
             result[key] = {
-                temp_min: parseInt(element.main.temp_min),
-                temp_max: parseInt(element.main.temp_max),
+                temp_min: element.main.temp_min,
+                temp_max: element.main.temp_max,
                 description: element.weather[0].description,
-                temp: parseInt(element.main.temp)
+                temp: element.main.temp
             };
         }
         if (time === currentDate) {
             result[key].description = element.weather[0].description;
-            result[key].temp = parseInt(element.main.temp);
+            result[key].temp = element.main.temp;
         }
     });
     return Object.keys(result).map(resultItem => ({ ...result[resultItem], date: new Date(resultItem) }));
+}
+
+export const convertData = (data, degree) => {
+    return data.map(e => ({
+        ...e,
+        temp: convertTemperature(e.temp, degree),
+        temp_min: convertTemperature(e.temp_min, degree),
+        temp_max: convertTemperature(e.temp_max, degree),
+    }))
+}
+
+const convertTemperature = (temp, toDegree) => {
+    if (toDegree === 'C')
+        return (temp - 32) * 5 / 9;
+    return temp * 9 / 5 + 32;
 }
 
 export const getImageWeather = (description, arrayWeatherImages) => {

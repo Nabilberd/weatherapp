@@ -32,16 +32,16 @@ export default ({ degree, cityName, currentWeather, displayPrevious, onClickLeft
                     </Text>
                 </div>
                 <div style={styles.imageBloc}>
-                    <img height={80} alt=""
+                    <img height={50} alt=""
                         src={getImageWeather(currentWeather.description, weatherImages).path}
                     >
                     </img>
                 </div>
-                <div style={{...styles.currentWeatherBloc, ...styles.cityBloc}}>
+                <div style={styles.cityBloc}>
                     <Text
                         style={styles.currentWeatherStyle}
                     >
-                        {currentWeather.temp + "°" + degree}
+                        {parseInt(currentWeather.temp) + "°" + degree}
                     </Text>
                     <Text
                         style={styles.descriptionBloc}

@@ -19,10 +19,12 @@ export default () => {
     const weatherData = weather.data;
 
     const getUnits = (currentUnit) => degreeItems.find(unit => unit.key === currentUnit)
+    const unitValue = getUnits(degree).value
 
+    /* eslint-disable */
     React.useEffect(() => {
-        dispatch(getWeatherInfo(defaultCity, getUnits(degree).value))
-    }, [dispatch, defaultCity, degree]);
+        dispatch(getWeatherInfo(defaultCity, unitValue));
+    }, [dispatch, defaultCity]);
 
     switch (status) {
         case 'error':
