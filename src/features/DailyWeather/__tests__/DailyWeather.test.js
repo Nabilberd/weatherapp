@@ -1,6 +1,7 @@
 import React from "react";
 import { render, cleanup, fireEvent, getByText } from "react-testing-library";
 import DailyWeather from "../components/DailyWeather";
+import data from '../../../services/weather.mocked';
 
 // automatically unmount and cleanup DOM after the test is finished.
 afterEach(cleanup)
@@ -17,6 +18,9 @@ describe("Feature Daily Weather", () => {
                 onClickRight={() => startIndex + 1}
                 displayPrevious={startIndex > 0}
                 displayNext={weatherDataSize > startIndex + 3}
+                cityName={'München'}
+                currentWeather={data[0]}
+                degree={'F'}
             />
         );
         expect(asFragment()).toMatchSnapshot()

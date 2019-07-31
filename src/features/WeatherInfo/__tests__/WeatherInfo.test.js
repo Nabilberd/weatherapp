@@ -11,9 +11,9 @@ describe("Feature Weather Card Information", () => {
     test("Display three cards with weather information ", async () => {
 
         const degree = "C";
-        
+        const cityName = "München";
         const { container, asFragment } = render(
-            <WeatherInfo weatherData={data} degree={degree} />
+            <WeatherInfo weatherData={data} degree={degree} cityName={cityName} />
         );
         expect(asFragment()).toMatchSnapshot()
     });
