@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import RadioGroup from '../../../commons/RadioGroup';
 import RadioItem from '../../../commons/RadioItem';
-import { inputchange } from '../../../actions/actionCreators'
+import { inputchange } from '../../../actions/actionCreators';
 
 /**
  * Contains all the static texts of the component.

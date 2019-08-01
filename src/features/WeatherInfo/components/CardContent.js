@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { getImageWeather, getTheDay, getTheMonth } from '../../../utils/commons'
+import { getImageWeather, getTheDay, getTheMonth } from '../../../utils/commons';
 import Text from '../../../commons/Text';
-import { styles } from '../styles/default'
-import weatherImages from '../resources/weatherImages'
+import { styles } from '../styles/default';
+import weatherImages from '../resources/weatherImages';
 
 export default ({date, description, temp_min, temp_max, degree}) => {
 

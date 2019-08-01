@@ -1,5 +1,5 @@
-import { INPUT_CHANGE, LOAD_WEATHER } from './actionTypes'
-import { APPID, WEATHER_PARAM } from './config'
+import { INPUT_CHANGE, LOAD_WEATHER } from './actionTypes';
+import { APPID, WEATHER_PARAM } from './config';
 
 export function inputchange(payload, reducer, storekey) {
   return {

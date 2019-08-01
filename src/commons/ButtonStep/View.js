@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import ArrowForward from '@material-ui/icons/ForwardRounded';
 
-import styles from '../style'
+import styles from '../style';
 
 export default ({size, variant, disabled=false, isLeft, handleClick=()=>{}}, style) => (
 

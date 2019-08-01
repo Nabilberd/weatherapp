@@ -4,7 +4,7 @@ import GridGroup from '../../../commons/GridGroup';
 import GridItem from '../../../commons/GridItem';
 import Card from '../../../commons/Card';
 import { DailyWeather } from '../../DailyWeather';
-import { styles } from '../styles/default'
+import { styles } from '../styles/default';
 import CardContent from './CardContent';
 
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import resources from '../resources/weatherChartRessouces'
-import BarChart from '../../../commons/BarChart'
-import { getUnitName } from '../../../utils/commons'
+import resources from '../resources/weatherChartRessouces';
+import BarChart from '../../../commons/BarChart';
+import { getUnitName } from '../../../utils/commons';
 
 export default ({ weatherData, degree }) => {
 

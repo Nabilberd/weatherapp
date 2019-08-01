@@ -1,5 +1,5 @@
 {
-  "globalTitle": "Daily Temperature in 5 day by ",
+  "globalTitle": "Daily Temperature of the upcoming 5 days in ",
   "titleAxeY": "Temperature by ",
   "argumentFields": {
     "argX": "date",

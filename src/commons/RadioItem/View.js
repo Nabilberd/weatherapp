@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
 
-import Text from '../Text'
-import styles from '../style'
+import Text from '../Text';
+import styles from '../style';
 
 export default ({value, label}) => (
     <FormControlLabel

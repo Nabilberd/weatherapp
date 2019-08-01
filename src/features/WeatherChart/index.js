@@ -1,1 +1,1 @@
-export {default as WeatherInfo} from './components/WeatherChart'
+export {default as WeatherInfo} from './components/WeatherChart';

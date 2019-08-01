@@ -1,7 +1,7 @@
 import React from 'react';
 import RadioGroup from "@material-ui/core/RadioGroup";
 
-import styles from '../style'
+import styles from '../style';
 
 export default ({row, value, name, handleChange, children, style}) => (
     <RadioGroup
