@@ -1,4 +1,4 @@
-import { INPUT_CHANGE, LOAD_WEATHER } from './actionTypes';
+import { INPUT_CHANGE, LOAD_WEATHER, GET_LOCALISATION } from './actionTypes';
 import { APPID, WEATHER_PARAM } from './config';
 
 export function inputchange(payload, reducer, storekey) {
@@ -18,6 +18,25 @@ export function getWeatherInfo(city, unit) {
         url: WEATHER_PARAM,
         params: {
           q: city,
+          APPID: APPID,
+          cnt: 40,
+          units: unit
+        }
+      }
+    }
+  }
+};
+
+
+export function getWeatherByLocalisation(long, lat, unit) {
+  return {
+    type: GET_LOCALISATION,
+    payload: {
+      request: {
+        url: WEATHER_PARAM,
+        params: {
+          lat: lat,
+          lon: long,
           APPID: APPID,
           cnt: 40,
           units: unit

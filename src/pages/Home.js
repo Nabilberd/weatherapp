@@ -2,12 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 
 import Error from './Error';
-import { degreeItems } from '../utils/commons';
-import { getWeatherInfo } from '../actions/actionCreators';
+import { degreeItems, getLocation } from '../utils/commons';
+import { getWeatherInfo, inputchange, getWeatherByLocalisation } from '../actions/actionCreators';
 import Spinner from '../commons/Spinner';
 import CheckWeather from '../features/CheckWeather/components/CheckWeather';
 import WeatherChart from '../features/WeatherChart/components/WeatherChart';
 import WeatherInfo from '../features/WeatherInfo/components/WeatherInfo';
+import { async } from 'q';
 
 export default () => {
 
@@ -23,8 +24,19 @@ export default () => {
 
     /* eslint-disable */
     React.useEffect(() => {
-        dispatch(getWeatherInfo(defaultCity, unitValue));
-    }, [dispatch, defaultCity]);
+
+        getLocation().then(position => {
+            const localisation = position.coords
+            if (localisation) {
+                dispatch(inputchange(localisation, 'localisation', 'localisation'))
+            }
+            if (localisation.longitude != '' && localisation.latitude != '') {
+                dispatch(getWeatherByLocalisation(localisation.longitude, localisation.latitude, unitValue))
+            }
+        })
+
+        //dispatch(getWeatherInfo(defaultCity, unitValue));
+    }, [dispatch, getLocation]);
 
     switch (status) {
         case 'error':

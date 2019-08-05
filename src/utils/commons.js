@@ -83,3 +83,21 @@ export const showPopup = (title, message, buttons) => {
         closeOnClickOutside: false
     })
 }
+
+export const showPosition = (position) => {
+    console.log("showPosition", position);
+    return position;
+}
+
+export const getLocation = () => {
+    return new Promise((resolve, reject) => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+                showPosition(pos);
+                return resolve(pos);
+            })
+        } else {
+            reject("Geolocation is not supported by this browser.")
+        }
+    })
+}

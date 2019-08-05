@@ -7,7 +7,7 @@ const initialState = {
     status: "loading"
 };
 
-export default function (state = initialState, action) {
+export default function weather(state = initialState, action) {
     switch (action.type) {
         case INPUT_CHANGE: {
             if (action.reducer === 'weather') {
@@ -18,8 +18,7 @@ export default function (state = initialState, action) {
                     [action.storekey]: action.payload
                 };
             }
-
-            break;
+            return state;
         }
         case 'LOAD_WEATHER':
             return {
@@ -33,6 +32,23 @@ export default function (state = initialState, action) {
                 status: "success"
             };
         case 'LOAD_WEATHER_FAIL':
+            return {
+                ...state,
+                status: "error"
+            }
+        case 'GET_LOCALISATION':
+            return {
+                ...state,
+                status: "loading"
+            };
+        case 'GET_LOCALISATION_SUCCESS':
+            return {
+                ...state,
+                city: action.payload.data.city.name,
+                data: weatherMapper(action.payload.data.list),
+                status: "success"
+            };
+        case 'GET_LOCALISATION_FAIL':
             return {
                 ...state,
                 status: "error"
