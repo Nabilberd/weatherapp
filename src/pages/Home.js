@@ -8,7 +8,6 @@ import Spinner from '../commons/Spinner';
 import CheckWeather from '../features/CheckWeather/components/CheckWeather';
 import WeatherChart from '../features/WeatherChart/components/WeatherChart';
 import WeatherInfo from '../features/WeatherInfo/components/WeatherInfo';
-import { async } from 'q';
 
 export default () => {
 
@@ -25,9 +24,12 @@ export default () => {
     /* eslint-disable */
     React.useEffect(() => {
 
+        let globalWeather = 0;
+
         getLocation().then(position => {
             const localisation = position.coords
             if (localisation) {
+                globalWeather = 1;
                 dispatch(inputchange(localisation, 'localisation', 'localisation'))
             }
             if (localisation.longitude != '' && localisation.latitude != '') {
@@ -35,7 +37,9 @@ export default () => {
             }
         })
 
-        //dispatch(getWeatherInfo(defaultCity, unitValue));
+        if (globalWeather === 0) {
+            dispatch(getWeatherInfo(defaultCity, unitValue))
+        }
     }, [dispatch, getLocation]);
 
     switch (status) {
