@@ -1,17 +1,23 @@
 import React from 'react';
+import loadable from '@loadable/component'
 import { useSelector, useDispatch } from "react-redux";
 
-import Error from './Error';
 import { degreeItems } from '../utils/commons';
-import { getWeatherInfo } from '../actions/actionCreators';
-import Spinner from '../commons/Spinner';
-import CheckWeather from '../features/CheckWeather/components/CheckWeather';
-import WeatherChart from '../features/WeatherChart/components/WeatherChart';
-import WeatherInfo from '../features/WeatherInfo/components/WeatherInfo';
+import { getWeatherInfo, inputchange } from '../actions/actionCreators';
+
+const Error = loadable(() => import('./Error'));
+const Spinner = loadable(() => import('../commons/Spinner'));
+const CheckWeather = loadable(() => import('../features/CheckWeather/components/CheckWeather'));
+const WeatherChart = loadable(() => import('../features/WeatherChart/components/WeatherChart'));
+const WeatherInfo = loadable(() => import('../features/WeatherInfo/components/WeatherInfo'));
+
+//import Spinner from '../commons/Spinner';
+
 
 export default () => {
 
     const weather = useSelector(state => state.weather);
+    const user = useSelector(state => state.user);
     const dispatch = useDispatch();
     const status = weather.status;
     const defaultCity = weather.city;
@@ -24,6 +30,7 @@ export default () => {
     /* eslint-disable */
     React.useEffect(() => {
         dispatch(getWeatherInfo(defaultCity, unitValue));
+        dispatch(inputchange("hamid", "user", "name"));
     }, [dispatch, defaultCity]);
 
     switch (status) {
@@ -35,6 +42,7 @@ export default () => {
         case 'success':
             return (
                 <>
+                <h1> name : {user.name}</h1>
                     <CheckWeather />
                     <WeatherInfo weatherData={weatherData} degree={degree} cityName={defaultCity} />
                     <WeatherChart degree={degree} weatherData={weatherData} />

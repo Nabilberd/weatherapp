@@ -1,9 +1,11 @@
 import React from 'react';
+import loadable from '@loadable/component'
 import {Provider} from 'react-redux';
 import store from './store';
-import Home from './pages/Home';
-
 import './assets/styles/index.css';
+
+const Home = loadable(() => import('./pages/Home'));
+
 
 export default () => {
   return (
