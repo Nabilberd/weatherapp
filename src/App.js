@@ -6,7 +6,6 @@ import './assets/styles/index.css';
 
 const Home = loadable(() => import('./pages/Home'));
 
-
 export default () => {
   return (
     <Provider store={store}>
