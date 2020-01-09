@@ -36,7 +36,8 @@ export const weatherMapper = (data) => {
             result[key].temp = element.main.temp;
         }
     });
-    return Object.keys(result).map(resultItem => ({ ...result[resultItem], date: new Date(resultItem) }));
+    const newData = Object.keys(result).map(resultItem => ({ ...result[resultItem], date: new Date(resultItem) }))
+    return newData;
 }
 
 export const convertData = (data, degree) => {
