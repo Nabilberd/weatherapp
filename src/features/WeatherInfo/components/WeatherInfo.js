@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import GridGroup from '../../../commons/GridGroup';
 import GridItem from '../../../commons/GridItem';
-import Card from '../../../commons/Card';
 import { DailyWeather } from '../../DailyWeather';
 import { styles } from '../styles/default';
 import CardContent from './CardContent';
 
 
-export default ({ weatherData, degree, cityName }) => {
+export default ({ weatherData, degree, cityName, selectedItem, setSelectedItem }) => {
 
     const [startIndex, setStartIndex] = React.useState(0);
+
+    /* If the startIndex changes it means that the user had clicked to the left or the right then 
+    *  the selectedItem will be the first
+    */
+    useEffect( () => {
+        if(selectedItem < startIndex || selectedItem > startIndex +3) setSelectedItem(startIndex);
+    }, [startIndex, selectedItem, setSelectedItem])
 
     return (
         <>
@@ -27,9 +33,7 @@ export default ({ weatherData, degree, cityName }) => {
                 <GridGroup spacing={6} style={styles.gridBloc}>
                     {weatherData.slice(startIndex, startIndex + 3).map((weatherItem, index) =>
                         <GridItem key={index} item>
-                            <Card raised>
-                                <CardContent {...weatherItem} degree={degree} />
-                            </Card>
+                            <CardContent {...weatherItem} degree={degree} isSelected={selectedItem === index+startIndex} setSelectedItem={()=> setSelectedItem(index+startIndex)}/>
                         </GridItem>
                     )}
                 </GridGroup>

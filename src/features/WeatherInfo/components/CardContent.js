@@ -4,42 +4,45 @@ import { getImageWeather, getTheDay, getTheMonth } from '../../../utils/commons'
 import Text from '../../../commons/Text';
 import { styles } from '../styles/default';
 import weatherImages from '../resources/weatherImages';
+import Card from '../../../commons/Card';
 
-export default ({date, description, temp_min, temp_max, degree}) => {
+export default ({ date, description, temp_min, temp_max, degree, isSelected, setSelectedItem }) => {
 
     return (
-        <>
-            <div style={styles.dateBloc}>
-                <Text
-                    style={styles.colorInfo}
-                >
-                    {getTheDay(date)} <br />
-                    {date.getDate() + " " + getTheMonth(date)}
-                </Text>
-            </div>
-            <div style={styles.imageBloc}>
-                <img height={60} alt=""
-                    src={getImageWeather(description, weatherImages).path}
-                >
-                </img>
-            </div>
-            <>
-                <div style={styles.minTempBloc}>
+        <Card raised style={{ backgroundColor: isSelected ? '#d9dee4' : '' }}>
+            <div onClick={setSelectedItem}>
+                <div style={styles.dateBloc}>
                     <Text
-                        style={styles.colorMinTemp}
+                        style={styles.colorInfo}
                     >
-                        {parseInt(temp_min) + "°" + degree}
+                        {getTheDay(date)} <br />
+                        {date.getDate() + " " + getTheMonth(date)}
                     </Text>
                 </div>
-                <>
-                    <Text
-                        style={styles.colorMaxTemp}
+                <div style={styles.imageBloc}>
+                    <img height={60} alt=""
+                        src={getImageWeather(description, weatherImages).path}
                     >
-                        {parseInt(temp_max) + "°" + degree}
-                    </Text>
+                    </img>
+                </div>
+                <>
+                    <div style={styles.minTempBloc}>
+                        <Text
+                            style={styles.colorMinTemp}
+                        >
+                            {parseInt(temp_min) + "°" + degree}
+                        </Text>
+                    </div>
+                    <>
+                        <Text
+                            style={styles.colorMaxTemp}
+                        >
+                            {parseInt(temp_max) + "°" + degree}
+                        </Text>
+                    </>
                 </>
-            </>
-        </>
+            </div>
+        </Card>
     )
 
 }

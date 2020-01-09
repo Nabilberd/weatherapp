@@ -4,18 +4,20 @@ import resources from '../resources/weatherChartRessouces';
 import BarChart from '../../../commons/BarChart';
 import { getUnitName } from '../../../utils/commons';
 
-export default ({ weatherData, degree }) => {
+export default ({ weatherData, degree, selectedItem }) => {
 
     const { globalTitle, titleAxeY, argumentFields, verticalAlignment, horizontalAlignment, formatToolip } = resources
 
     const unitName = getUnitName(degree)
 
     const customizeTooltip = (element) => {
+        debugger;
         const value = Math.floor(element.value)
         return { text: `Date : ${element.argumentText}<br>${element.seriesName} : ${value}&#176` + degree };
     }
 
     const customizeText = (arg) => {
+        debugger;
         return `${arg.valueText}&#176` + degree;
     }
 
@@ -30,7 +32,7 @@ export default ({ weatherData, degree }) => {
             argumentFields={argumentFields}
             customizeText={customizeText}
             customizeTooltip={customizeTooltip}
-            dataSource={weatherData.map(weatherItem => ({ ...weatherItem, date: weatherItem.date.toLocaleDateString() }))}
+            dataSource={ weatherData[selectedItem].temp_by_hour.map(weatherItem => ({ ...weatherItem, date: weatherItem.time }))}
         />
     )
 }

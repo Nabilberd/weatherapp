@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 
 import { degreeItems } from '../utils/commons';
@@ -30,6 +30,9 @@ export default () => {
         dispatch(getWeatherInfo(defaultCity, unitValue));
     }, [dispatch, defaultCity]);
 
+    // Using the composition design pattern the child manage childs and make sepation of roles for every component
+    const [selectedItem, setSelectedItem] = useState(0);
+
     switch (status) {
         case 'error':
             const popupActions = [{ label: 'Retry', onClick: () => dispatch(getWeatherInfo(defaultCity, getUnits(degree).value)) }];
@@ -40,8 +43,8 @@ export default () => {
             return (
                 <>
                     <CheckWeather />
-                    <WeatherInfo weatherData={weatherData} degree={degree} cityName={defaultCity} />
-                    <WeatherChart degree={degree} weatherData={weatherData} />
+                    <WeatherInfo weatherData={weatherData} degree={degree} cityName={defaultCity} selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
+                    <WeatherChart degree={degree} weatherData={weatherData} selectedItem={selectedItem} />
                 </>
             )
         default:

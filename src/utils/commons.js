@@ -20,17 +20,21 @@ export const weatherMapper = (data) => {
     data.forEach(element => {
         const key = element.dt_txt.substring(0, 10);
         const time = element.dt_txt.substring(11);
+        
         if (result[key]) {
             result[key].temp_min = Math.min(result[key].temp_min, element.main.temp_min);
             result[key].temp_max = Math.max(result[key].temp_max, element.main.temp_max);
+            
         } else {
             result[key] = {
                 temp_min: element.main.temp_min,
                 temp_max: element.main.temp_max,
                 description: element.weather[0].description,
-                temp: element.main.temp
+                temp: element.main.temp,
+                temp_by_hour : []
             };
         }
+        result[key].temp_by_hour.push({time : time, temp_min : element.main.temp_min, temp_max: element.main.temp_max})
         if (time === currentDate) {
             result[key].description = element.weather[0].description;
             result[key].temp = element.main.temp;
@@ -45,6 +49,7 @@ export const convertData = (data, degree) => {
         temp: convertTemperature(e.temp, degree),
         temp_min: convertTemperature(e.temp_min, degree),
         temp_max: convertTemperature(e.temp_max, degree),
+        temp_by_hour : e.temp_by_hour.map(e => ({...e, temp_min: convertTemperature(e.temp_min, degree), temp_max: convertTemperature(e.temp_max, degree)}))
     }))
 }
 
