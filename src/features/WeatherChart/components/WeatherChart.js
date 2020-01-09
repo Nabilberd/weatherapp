@@ -11,13 +11,11 @@ export default ({ weatherData, degree, selectedItem }) => {
     const unitName = getUnitName(degree)
 
     const customizeTooltip = (element) => {
-        debugger;
         const value = Math.floor(element.value)
         return { text: `Date : ${element.argumentText}<br>${element.seriesName} : ${value}&#176` + degree };
     }
 
     const customizeText = (arg) => {
-        debugger;
         return `${arg.valueText}&#176` + degree;
     }
 
