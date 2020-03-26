@@ -13,12 +13,14 @@ const client = axios.create({
     baseURL: API_URL_API,
     responseType: 'json'
 });
-const enhancer = process.env.NODE_ENV === "development" ? composeWithDevTools(applyMiddleware(axiosMiddleware(client))) : compose(applyMiddleware(axiosMiddleware(client)));
 //create store using combine reducers and axios middleware
 const store = createStore(
     combineReducers({
         ...reducers,
-    }),enhancer
+    }),
+    applyMiddleware(	
+        axiosMiddleware(client),	
+    )
 );
 
 export default store;
