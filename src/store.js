@@ -1,6 +1,5 @@
 
 import { createStore,compose, combineReducers, applyMiddleware } from 'redux';
-import { composeWithDevTools } from "redux-devtools-extension";
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
